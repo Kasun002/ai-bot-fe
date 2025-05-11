@@ -28,7 +28,7 @@ const ChatComponent: React.FunctionComponent = () => {
   return (
     <div className="flex flex-col h-[80vh] bg-white">
       <h2 className="p-4 font-semibold text-lg text-center bg-green-100 flex text-green-800 justify-center items-center gap-2">
-        Talking Friend <MdSupportAgent size={25} />
+        Office helper <MdSupportAgent size={25} />
       </h2>
 
       <div ref={ref} className="flex-1 overflow-y-auto p-4 space-y-2">
@@ -70,7 +70,7 @@ const ChatComponent: React.FunctionComponent = () => {
       <div className="flex items-center p-4 bg-gray-50">
         <input
           type="text"
-          className=  {`flex-1 p-2 border rounded-lg focus:outline-none $ ${loading? 'opacity-60': 'opacity-100'}`}
+          className={`flex-1 p-2 border rounded-lg focus:outline-none $ ${loading ? 'opacity-60' : 'opacity-100'}`}
           placeholder="How can I help you"
           value={input}
           disabled={loading}
@@ -81,7 +81,7 @@ const ChatComponent: React.FunctionComponent = () => {
             }
           }}
         />
-        <button onClick={handleSend} className={`p-2 ${loading? 'opacity-60': 'opacity-100'}`} disabled={loading}>
+        <button onClick={handleSend} className={`p-2 ${loading ? 'opacity-60' : 'opacity-100'}`} disabled={loading}>
           <LuSendHorizontal size={25} />
         </button>
       </div>

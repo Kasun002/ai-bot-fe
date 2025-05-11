@@ -26,9 +26,7 @@ const useChatbot = () => {
       const response = await axios.post(
         aiProviderUrl,
         {
-          model: "mistral",
-          messages: [{ role: "user", content: message }],
-          stream: false,
+          question: message,
         },
         {
           headers: {
@@ -36,7 +34,7 @@ const useChatbot = () => {
           },
         }
       );
-      const botMessage = response.data.message?.content || "No response.";
+      const botMessage = response.data.answer || "No response.";
       setMessages([...newMessages, { text: botMessage, sender: "bot" }]);
     } catch (error) {
       console.error("Error contacting Ollama:", error);
